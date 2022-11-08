@@ -1,0 +1,4361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Game from Start to Published!</title>
+<meta name="author" content="Cameron Gose"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/windows-high-contrast.min.css"/></head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Game from Start to Published!</h1><p class="subtitle"></p>
+<h2 class="author">Cameron Gose</h2>
+</section>
+
+<section>
+<section id="slide-org709af23">
+<h2 id="org709af23"><span class="section-number-2">1.</span> Introduction</h2>
+<ul>
+<li>Insert picture of me with social media stuff I guess</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgfba4805">
+<h2 id="orgfba4805"><span class="section-number-2">2.</span> DragonRuby Game Toolkit</h2>
+<aside class="notes">
+<p>
+First of all this is not a typo. DragonRuby is one word
+</p>
+
+</aside>
+</section>
+<section id="slide-org6cd3466">
+<h3 id="org6cd3466"><span class="section-number-3">2.1.</span> Ruby</h3>
+<aside class="notes">
+<p>
+It implements the standard Ruby language spec. DragonRuby is Ruby 2.x compatible, according to the documentation
+</p>
+
+</aside>
+</section>
+<section id="slide-org09390b1">
+<h3 id="org09390b1"><span class="section-number-3">2.2.</span> Runtime</h3>
+<aside class="notes">
+<p>
+DragonRuby is a multilevel cross-platform runtime. It can target PC, Mac, Linux, Raspberry Pi, WASM, iOS, Android, Nintendo Switch, Playstation, XBox, and VR on the Oculus Quest
+</p>
+
+</aside>
+
+</section>
+<section id="slide-orgb0d8b87">
+<h3 id="orgb0d8b87"><span class="section-number-3">2.3.</span> Game Toolkit (GTK)</h3>
+<aside class="notes">
+<p>
+DragonRuby GTK is a self contained 2D game engine. Where you don&rsquo;t need to learn a UI to use. It does have some 3D capabilities though.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbd434cf">
+<h2 id="orgbd434cf"><span class="section-number-2">3.</span> Requirements</h2>
+<aside class="notes">
+<p>
+3 things are really needed to run the GTK. Bring your own editor that supports Ruby
+The DragonRuby GTK. It comes in a zipped folder so you just need to unzip it
+Need a Linux,Mac,PC or a Raspberry Pi
+</p>
+
+</aside>
+<ul>
+<li>BYOE</li>
+<li>DragonRuby GTK</li>
+<li>Linux/MacOS/Raspberry Pi/Windows</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbe10f94">
+<h2 id="orgbe10f94"><span class="section-number-2">4.</span> How do you get it</h2>
+<aside class="notes">
+<p>
+<a href="https://dragonruby.itch.io/dragonruby-gtk">itch.io</a>
+<a href="https://dragonruby.org/toolkit/game">DragonRuby.org</a>
+</p>
+
+</aside>
+</section>
+</section>
+<section>
+<section id="slide-orgeecaf44">
+<h2 id="orgeecaf44"><span class="section-number-2">5.</span> Initial Setup</h2>
+<ul>
+<li>clone repo <a href="https://github.com/goseinthemachine/2022-ruby-conf-workshop">https://github.com/goseinthemachine/2022-ruby-conf-workshop</a></li>
+<li>go into the folder</li>
+<li>In the terminal run the following</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre   ><code class="bash" ># For Mac or Linux
+./dragonruby
+# For Windows
+dragonruby
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org3f2ef0d">
+<h2 id="org3f2ef0d"><span class="section-number-2">6.</span> Let&rsquo;s Publish</h2>
+<aside class="notes">
+<p>
+After completing Hello world it is now time to publish to itch.io.
+Itch.io is a platform for selling and finding games and other digital content
+DragonRuby GTK makes it fairly simple to publish games.
+The first publish takes a little bit of work but after the initial setup every publish afterwards is super easy.
+So we&rsquo;ll need to go to itch.io
+Create an account if you don&rsquo;t have one already.
+Now Let&rsquo;s login
+Go to this link <a href="https://dragonruby.org/toolkit/game">New Game Link</a>
+Fill out the form keep note of the slug added to the game url. We&rsquo;ll need that to update the game metadata
+</p>
+
+</aside>
+<ul>
+<li>Go to <a href="https://itch.io">itch.io</a></li>
+<li>Create an account if you haven&rsquo;t already</li>
+
+</ul>
+</section>
+<section id="slide-org8047881">
+<h3 id="org8047881"><span class="section-number-3">6.1.</span> Create the Landing Page</h3>
+<ul>
+<li>Go to <a href="https://itch.io/game/new">https://itch.io/game/new</a></li>
+<li>Add a title</li>
+<li>Add the project url</li>
+<li>Kind of project change to HTML</li>
+
+</ul>
+</section>
+<section id="slide-org2156020">
+<h3 id="org2156020"><span class="section-number-3">6.2.</span> Update Game Metadata</h3>
+<aside class="notes">
+<p>
+In mygame/metadata/game<sub>metadata</sub> insert something like the following but insert in your values
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre   ><code class="text" >devid=your_itch_io_user_name
+devtitle=Your Name
+gameid=ruby_conf_mini
+gametitle=Ruby Conf Mini Workshop
+version=0.1
+</code></pre>
+</div>
+</section>
+<section id="slide-orgc12a152">
+<h3 id="orgc12a152"><span class="section-number-3">6.3.</span> Building your game</h3>
+<aside class="notes">
+<p>
+We&rsquo;ll be running the dragonruby-publish command
+This command needs to be ran in the root of the cloned folder
+mygame is the name of the folder to package up which will be mygame in our example
+This will build all the executables and put them in a build folder in the root of DragonRuby
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre   ><code class="bash" ># Mac and Linux
+./dragonruby-publish --only-package mygame
+# Windows
+dragonruby-publish --only-package mygame
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgcea1d88">
+<h2 id="orgcea1d88"><span class="section-number-2">7.</span> The Basics</h2>
+<aside class="notes">
+<p>
+We&rsquo;re going to clear out the hello world example and setup the basic game loop
+</p>
+
+</aside>
+</section>
+<section id="slide-orgc5f6e47">
+<h3 id="orgc5f6e47"><span class="section-number-3">7.1.</span> The Loop</h3>
+<aside class="notes">
+<p>
+Every game has a loop that continuously loops over 3 functions. We&rsquo;ll handle user input, update the game state, then render to the screen
+We&rsquo;ll create a function in our game for each part of the basic game loop
+</p>
+
+</aside>
+<ul>
+<li>Handling Input</li>
+<li>Updating and Calculating Game State</li>
+<li>Rendering to the Screen</li>
+
+</ul>
+</section>
+<section id="slide-orgc3a84c4">
+<h3 id="orgc3a84c4"><span class="section-number-3">7.2.</span> The Loop</h3>
+<p>
+Clear main.rb and add the following
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="1-3|5-9|11-15|17-21">def handle_input args
+
+end
+
+# Functions that update game state where go here
+
+def update args
+
+end
+
+# Functions that will render to the screen will go here
+
+def render args
+
+end
+
+def tick args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org0d580bf">
+<h3 id="org0d580bf"><span class="section-number-3">7.3.</span> Handle Input</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="1-3">def handle_input args
+  #Code for handling user input will go here
+end
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org7cbd53f">
+<h3 id="org7cbd53f"><span class="section-number-3">7.4.</span> Update</h3>
+<aside class="notes">
+<p>
+This function will be used to call other functions that will
+update or calculate game state
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="1-3">def update args
+  #functions that update game state will go here
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org407ac2f">
+<h3 id="org407ac2f"><span class="section-number-3">7.5.</span> Rendering to the screen</h3>
+<aside class="notes">
+<p>
+This function will be used to call other render functions
+to draw to the game window
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="1-3">def render args
+  # Code for rendering will occur here
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org2f86965">
+<h3 id="org2f86965"><span class="section-number-3">7.6.</span> Tick</h3>
+<aside class="notes">
+<p>
+We have these 3 functions now where do we put them?
+In DragonRuby GTK there is a function that it looks for in main.rb
+That is the tick function
+The tick function is important it is called 60 times a second
+This ensures a smooth framerate so animations looks smooth
+</p>
+
+</aside>
+<aside class="notes">
+<p>
+We&rsquo;ll put the handle<sub>input</sub>, render and update functions within tick
+Each of these steps occur every time tick is called and each time that
+happens the game check for user input, figures out what is going on, then
+draws everything to the screen again. This happens every tick 60 times a second.
+</p>
+
+</aside>
+
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="1-5">def tick args # Will contain the GTK environment
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgf6a7bc7">
+<h2 id="orgf6a7bc7"><span class="section-number-2">8.</span> Setting up the scene</h2>
+<aside class="notes">
+<p>
+Now that we have the basics of the game loop defined in our code we can now start to build the game.
+Today we will be building the classic arcade game of snake. In the classic game the snake moves along a grid.
+Lets draw that grid.
+</p>
+
+</aside>
+</section>
+<section id="slide-orgf4824be">
+<h3 id="orgf4824be"><span class="section-number-3">8.1.</span> Drawing the Grid</h3>
+<aside class="notes">
+<p>
+To draw the grid we need to draw lines vertically along the x-axis and horizontally along the y-axis
+</p>
+
+</aside>
+</section>
+<section id="slide-orgfadb918">
+<h4 id="orgfadb918"><span class="section-number-4">8.1.1.</span> Setting the Grid Size</h4>
+<aside class="notes">
+<p>
+We need to define how far the grids should be spaced apart. At the top of the file create a constant to hold GRID SIZE to be equal to 20.
+We&rsquo;ll be using GRID<sub>SIZE</sub> to set the height and width of each square on the grid.
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="1|9-10|12-13">GRID_SIZE = 20
+
+def handle_input args
+end
+
+def update args
+end
+
+def render_grid args
+end
+
+def render args
+  render_grid args
+end
+
+def tick args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org4043279">
+<h4 id="org4043279"><span class="section-number-4">8.1.2.</span> Drawing lines along the X-Axis</h4>
+<aside class="notes">
+<p>
+In render grid we are going to add in some code to draw along the x direction.
+args.grid.x contains the width of the game window which in our case is 1080
+First we&rsquo;ll determine how many lines we need to draw along the x-axis before drawing
+DragonRuby GTK provide a nice way to draw lines
+args.outputs has a collection call lines. If we append to the lines collection a hash that contains x, y, x2, y2 values
+We can draw a line to the screen
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="9,20|10|12,19|13-18">GRID_SIZE = 20
+
+def handle_input args
+end
+
+def update args
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+
+  x_axis.each_with_index do |x|
+        args.outputs.lines &lt;&lt; {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+end
+
+def render args
+  render_grid args
+end
+
+def tick args
+  handle_input args
+  update args
+  render args
+end
+
+</code></pre>
+</div>
+</section>
+<section id="slide-org31d2d18">
+<h4 id="org31d2d18"><span class="section-number-4">8.1.3.</span> Drawing lines along the Y-Axis</h4>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="11|22-28">GRID_SIZE = 20
+
+def handle_input args
+end
+
+def update args
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt; {
+      x: x * GRID_SIZE,
+      y: 0,
+      x2: x * GRID_SIZE,
+      y2: args.grid.h
+    }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt; {
+      x: 0,
+      y: y * GRID_SIZE,
+      x2: args.grid.w,
+      y2: y * GRID_SIZE
+    }
+  end
+end
+
+def render args
+  render_grid args
+end
+
+def tick args
+  handle_input args
+  update args
+  render args
+end
+
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org6633d22">
+<h3 id="org6633d22"><span class="section-number-3">8.2.</span> Drawing the head of the snake</h3>
+<div class="outline-text-3" id="text-8-2">
+</div>
+</section>
+<section id="slide-orga655e98">
+<h4 id="orga655e98"><span class="section-number-4">8.2.1.</span> Setting up defaults</h4>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="37,48|38-47|51">GRID_SIZE = 20
+
+def handle_input args
+end
+
+def update args
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render args
+  render_grid args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org0f6295f">
+<h4 id="org0f6295f"><span class="section-number-4">8.2.2.</span> Rendering the Snake</h4>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="33-35|39">GRID_SIZE = 20
+
+def handle_input args
+end
+
+def update args
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; args.state.head
+end
+
+def render args
+  render_grid args
+  render_snake args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgfef2bf3">
+<h2 id="orgfef2bf3"><span class="section-number-2">9.</span> Adding Movement</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+</section>
+<section id="slide-org2c0b716">
+<h3 id="org2c0b716"><span class="section-number-3">9.1.</span> Handling player input</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="3,16|4,5|7-15">GRID_SIZE = 20
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def update args
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; args.state.head
+end
+
+def render args
+  render_grid args
+  render_snake args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-orgc7d641d">
+<h3 id="orgc7d641d"><span class="section-number-3">9.2.</span> Updating the Snake&rsquo;s Position</h3>
+<aside class="notes">
+<p>
+We&rsquo;ll set the speed constant to 10. We&rsquo;ll use this to slow down the movement.
+Next we&rsquo;ll create a function to update position of the head of the snake
+Then we&rsquo;ll call that function within the update function
+</p>
+
+</aside>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="2|19,34|20-21|22-31|32-33|36-40">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def move_snake args
+  head = args.state.head
+  vector = { x: 0, y: 0 }
+  case head.direction
+  when :right
+    vector.x = 1
+  when :left
+    vector.x = -1
+  when :down
+    vector.y = -1
+  when :up
+    vector.y = 1
+  end
+  head.x += GRID_SIZE * vector.x
+  head.y += GRID_SIZE * vector.y
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; args.state.head
+end
+
+def render args
+  render_grid args
+  render_snake args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org0dffc95">
+<h2 id="org0dffc95"><span class="section-number-2">10.</span> Setting Boundaries</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+</section>
+<section id="slide-org00b58ef">
+<h3 id="org00b58ef"><span class="section-number-3">10.1.</span> Rendering the walls</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="81|92-98|99-105|106-112|113-119|70-73|75,78">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def move_snake args
+  head = args.state.head
+  vector = { x: 0, y: 0 }
+  case head.direction
+  when :right
+    vector.x = 1
+  when :left
+    vector.x = -1
+  when :down
+    vector.y = -1
+  when :up
+    vector.y = 1
+  end
+  head.x += GRID_SIZE * vector.x
+  head.y += GRID_SIZE * vector.y
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; args.state.head
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org68025c3">
+<h3 id="org68025c3"><span class="section-number-3">10.2.</span> Get the walls to stop the snake</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="36,45|37,38|39,44|40-43|47,50">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def move_snake args
+  head = args.state.head
+  vector = { x: 0, y: 0 }
+  case head.direction
+  when :right
+    vector.x = 1
+  when :left
+    vector.x = -1
+  when :down
+    vector.y = -1
+  when :up
+    vector.y = 1
+  end
+  head.x += GRID_SIZE * vector.x
+  head.y += GRID_SIZE * vector.y
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; args.state.head
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga3c35b5">
+<h2 id="orga3c35b5"><span class="section-number-2">11.</span> Scoring</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+</section>
+<section id="slide-orgea38f1e">
+<h3 id="orgea38f1e"><span class="section-number-3">11.1.</span> Generating a collectable</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="47,61|48,60|49,50|51-59">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def move_snake args
+  head = args.state.head
+  vector = { x: 0, y: 0 }
+  case head.direction
+  when :right
+    vector.x = 1
+  when :left
+    vector.x = -1
+  when :down
+    vector.y = -1
+  when :up
+    vector.y = 1
+  end
+  head.x += GRID_SIZE * vector.x
+  head.y += GRID_SIZE * vector.y
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 2).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 2).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; args.state.head
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org2c1c314">
+<h3 id="org2c1c314"><span class="section-number-3">11.2.</span> Collecting</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="47,52|48|49,51|50|70,74,77">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def move_snake args
+  head = args.state.head
+  vector = { x: 0, y: 0 }
+  case head.direction
+  when :right
+    vector.x = 1
+  when :left
+    vector.x = -1
+  when :down
+    vector.y = -1
+  when :up
+    vector.y = 1
+  end
+  head.x += GRID_SIZE * vector.x
+  head.y += GRID_SIZE * vector.y
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; args.state.head
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org75159a0">
+<h3 id="org75159a0"><span class="section-number-3">11.3.</span> Rendering Score</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="129|174|47,51,53|117,123|118-122|125,130,131">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def move_snake args
+  head = args.state.head
+  vector = { x: 0, y: 0 }
+  case head.direction
+  when :right
+    vector.x = 1
+  when :left
+    vector.x = -1
+  when :down
+    vector.y = -1
+  when :up
+    vector.y = 1
+  end
+  head.x += GRID_SIZE * vector.x
+  head.y += GRID_SIZE * vector.y
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; args.state.head
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; {
+    x: args.grid.left.shift_right(2 * GRID_SIZE),
+    y: args.grid.top.shift_down(2 * GRID_SIZE),
+    text: "Score: #{args.state.score}"
+  }
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+  render_score args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc7aa3e0">
+<h2 id="orgc7aa3e0"><span class="section-number-2">12.</span> Adding Sound</h2>
+<div class="outline-text-2" id="text-12">
+</div>
+</section>
+<section id="slide-org820cbba">
+<h3 id="org820cbba"><span class="section-number-3">12.1.</span> Trigger a sound when collecting</h3>
+<ul>
+<li>Find a sound you like</li>
+<li>itch.io is a good resource</li>
+<li>Add sound to sounds folder located in mygame folder</li>
+
+</ul>
+</section>
+<section id="slide-org5ed5d1c">
+<h3 id="org5ed5d1c"><span class="section-number-3">12.2.</span> Update function to trigger sound</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="47,52,54">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def move_snake args
+  head = args.state.head
+  vector = { x: 0, y: 0 }
+  case head.direction
+  when :right
+    vector.x = 1
+  when :left
+    vector.x = -1
+  when :down
+    vector.y = -1
+  when :up
+    vector.y = 1
+  end
+  head.x += GRID_SIZE * vector.x
+  head.y += GRID_SIZE * vector.y
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; args.state.head
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+  render_score args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd970643">
+<h2 id="orgd970643"><span class="section-number-2">13.</span> Adding the Snake Body</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+</section>
+<section id="slide-orgfa2e1d4">
+<h3 id="orgfa2e1d4"><span class="section-number-3">13.1.</span> Adding the snake body</h3>
+<div class="outline-text-3" id="text-13-1">
+</div>
+</section>
+<section id="slide-orgceb68e7">
+<h4 id="orgceb68e7"><span class="section-number-4">13.1.1.</span> Add initial state to defaults</h4>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="191">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def move_snake args
+  head = args.state.head
+  vector = { x: 0, y: 0 }
+  case head.direction
+  when :right
+    vector.x = 1
+  when :left
+    vector.x = -1
+  when :down
+    vector.y = -1
+  when :up
+    vector.y = 1
+  end
+  head.x += GRID_SIZE * vector.x
+  head.y += GRID_SIZE * vector.y
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def grow_body args
+  segment = args.state.body.last.clone ||
+    args.state.head.clone
+  vector = { x: 0, y: 0 }
+  if segment.direction == :right
+    vector.x = -1
+  elsif segment.direction == :left
+    vector.x = 1
+  elsif segment.direction == :down
+    vector.y = 1
+  elsif segment.direction == :up
+    vector.y = -1
+  end
+
+  segment.x += (GRID_SIZE * vector.x)
+  segment.y += (GRID_SIZE * vector.y)
+  args.state.body &lt;&lt; segment
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+    grow_body args
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; [args.state.head, *args.state.body]
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+  render_score args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+  args.state.body ||= []
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org1250408">
+<h4 id="org1250408"><span class="section-number-4">13.1.2.</span> Increase the body size</h4>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="47,64|48,49|50|51-59|61,62|63">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right 
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def move_snake args
+  head = args.state.head
+  vector = { x: 0, y: 0 }
+  case head.direction
+  when :right
+    vector.x = 1
+  when :left
+    vector.x = -1
+  when :down
+    vector.y = -1
+  when :up
+    vector.y = 1
+  end
+  head.x += GRID_SIZE * vector.x
+  head.y += GRID_SIZE * vector.y
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def grow_body args
+  segment = args.state.body.last.clone ||
+    args.state.head.clone
+  vector = { x: 0, y: 0 }
+  if segment.direction == :right
+    vector.x = -1
+  elsif segment.direction == :left
+    vector.x = 1
+  elsif segment.direction == :down
+    vector.y = 1
+  elsif segment.direction == :up
+    vector.y = -1
+  end
+
+  segment.x += (GRID_SIZE * vector.x)
+  segment.y += (GRID_SIZE * vector.y)
+  args.state.body &lt;&lt; segment
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+    grow_body args
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; [args.state.head, *args.state.body]
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+  render_score args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+  args.state.body ||= []
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org0f0836a">
+<h4 id="org0f0836a"><span class="section-number-4">13.1.3.</span> Update Collect Collision</h4>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="66,72,74">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right 
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def move_snake args
+  head = args.state.head
+  vector = { x: 0, y: 0 }
+  case head.direction
+  when :right
+    vector.x = 1
+  when :left
+    vector.x = -1
+  when :down
+    vector.y = -1
+  when :up
+    vector.y = 1
+  end
+  head.x += GRID_SIZE * vector.x
+  head.y += GRID_SIZE * vector.y
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def grow_body args
+  segment = args.state.body.last.clone ||
+    args.state.head.clone
+  vector = { x: 0, y: 0 }
+  if segment.direction == :right
+    vector.x = -1
+  elsif segment.direction == :left
+    vector.x = 1
+  elsif segment.direction == :down
+    vector.y = 1
+  elsif segment.direction == :up
+    vector.y = -1
+  end
+
+  segment.x += (GRID_SIZE * vector.x)
+  segment.y += (GRID_SIZE * vector.y)
+  args.state.body &lt;&lt; segment
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+    grow_body args
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; [args.state.head, *args.state.body]
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+  render_score args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+  args.state.body ||= []
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+
+</section>
+<section id="slide-orgc508af0">
+<h4 id="orgc508af0"><span class="section-number-4">13.1.4.</span> Render the body</h4>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="126">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+
+  if inputs.left
+    head.direction = :left
+  elsif inputs.right 
+    head.direction = :right
+  elsif inputs.up
+    head.direction = :up
+  elsif inputs.down
+    head.direction = :down
+  end
+end
+
+def move_snake args
+  head = args.state.head
+  vector = { x: 0, y: 0 }
+  case head.direction
+  when :right
+    vector.x = 1
+  when :left
+    vector.x = -1
+  when :down
+    vector.y = -1
+  when :up
+    vector.y = 1
+  end
+  head.x += GRID_SIZE * vector.x
+  head.y += GRID_SIZE * vector.y
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def grow_body args
+  segment = args.state.body.last.clone ||
+    args.state.head.clone
+  vector = { x: 0, y: 0 }
+  if segment.direction == :right
+    vector.x = -1
+  elsif segment.direction == :left
+    vector.x = 1
+  elsif segment.direction == :down
+    vector.y = 1
+  elsif segment.direction == :up
+    vector.y = -1
+  end
+
+  segment.x += (GRID_SIZE * vector.x)
+  segment.y += (GRID_SIZE * vector.y)
+  args.state.body &lt;&lt; segment
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+    grow_body args
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; [args.state.head, *args.state.body]
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+  render_score args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+  args.state.body ||= []
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org7cb0dbf">
+<h3 id="org7cb0dbf"><span class="section-number-3">13.2.</span> Refactoring Snake Movement</h3>
+<div class="outline-text-3" id="text-13-2">
+</div>
+</section>
+<section id="slide-org6ac95a7">
+<h4 id="org6ac95a7"><span class="section-number-4">13.2.1.</span> Update handle input</h4>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="4,19|7,18|8|9|11|13|15">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+  if args.tick_count.mod_zero? SPEED
+    head.previous_direction = head.direction
+    if inputs.left &amp;&amp; head.previous_direction != :right
+      head.direction = :left
+    elsif inputs.right &amp;&amp; head.previous_direction != :left
+      head.direction = :right
+    elsif inputs.up &amp;&amp; head.previous_direction != :down
+      head.direction = :up
+    elsif inputs.down &amp;&amp; head.previous_direction != :up
+      head.direction = :down
+    end
+  end
+end
+
+def move_snake args
+  snake = [args.state.head, *args.state.body]
+  snake.each_with_index do |segment, index|
+    segment.previous_direction = segment.direction unless index == 0
+    segment.direction = snake[index - 1].previous_direction unless index == 0
+    vector = { x: 0, y: 0 }
+    case segment.direction
+    when :right
+      vector.x = 1
+    when :left
+      vector.x = -1
+    when :down
+      vector.y = -1
+    when :up
+      vector.y = 1
+    end
+    segment.x += GRID_SIZE * vector.x
+    segment.y += GRID_SIZE * vector.y
+  end
+
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def grow_body args
+  segment = args.state.body.last.clone ||
+    args.state.head.clone
+  vector = { x: 0, y: 0 }
+  if segment.direction == :right
+    vector.x = -1
+  elsif segment.direction == :left
+    vector.x = 1
+  elsif segment.direction == :down
+    vector.y = 1
+  elsif segment.direction == :up
+    vector.y = -1
+  end
+
+  segment.x += (GRID_SIZE * vector.x)
+  segment.y += (GRID_SIZE * vector.y)
+  args.state.body &lt;&lt; segment
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+    grow_body args
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; [args.state.head, *args.state.body]
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+  render_score args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+  args.state.body ||= []
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org606efc6">
+<h4 id="org606efc6"><span class="section-number-4">13.2.2.</span> Update Snake Movement</h4>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="21,40|22|23,39|24|25|27|37,38">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+  if args.tick_count.mod_zero? SPEED
+    head.previous_direction = head.direction
+    if inputs.left &amp;&amp; head.previous_direction != :right
+      head.direction = :left
+    elsif inputs.right &amp;&amp; head.previous_direction != :left
+      head.direction = :right
+    elsif inputs.up &amp;&amp; head.previous_direction != :down
+      head.direction = :up
+    elsif inputs.down &amp;&amp; head.previous_direction != :up
+      head.direction = :down
+    end
+  end
+end
+
+def move_snake args
+  snake = [args.state.head, *args.state.body]
+  snake.each_with_index do |segment, index|
+    segment.previous_direction = segment.direction unless index == 0
+    segment.direction = snake[index - 1].previous_direction unless index == 0
+    vector = { x: 0, y: 0 }
+    case segment.direction
+    when :right
+      vector.x = 1
+    when :left
+      vector.x = -1
+    when :down
+      vector.y = -1
+    when :up
+      vector.y = 1
+    end
+    segment.x += GRID_SIZE * vector.x
+    segment.y += GRID_SIZE * vector.y
+  end
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def grow_body args
+  segment = args.state.body.last.clone ||
+    args.state.head.clone
+  vector = { x: 0, y: 0 }
+  if segment.direction == :right
+    vector.x = -1
+  elsif segment.direction == :left
+    vector.x = 1
+  elsif segment.direction == :down
+    vector.y = 1
+  elsif segment.direction == :up
+    vector.y = -1
+  end
+
+  segment.x += (GRID_SIZE * vector.x)
+  segment.y += (GRID_SIZE * vector.y)
+  args.state.body &lt;&lt; segment
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+    grow_body args
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; [args.state.head, *args.state.body]
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+  render_score args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+  args.state.body ||= []
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-orga1b0839">
+<h3 id="orga1b0839"><span class="section-number-3">13.3.</span> Colliding with self</h3>
+<div class="outline-text-3" id="text-13-3">
+</div>
+</section>
+<section id="slide-org85a2793">
+<h4 id="org85a2793"><span class="section-number-4">13.3.1.</span> Create function to handle body collision</h4>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="53-57|104,109,112">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+  if args.tick_count.mod_zero? SPEED
+    head.previous_direction = head.direction
+    if inputs.left &amp;&amp; head.previous_direction != :right
+      head.direction = :left
+    elsif inputs.right &amp;&amp; head.previous_direction != :left
+      head.direction = :right
+    elsif inputs.up &amp;&amp; head.previous_direction != :down
+      head.direction = :up
+    elsif inputs.down &amp;&amp; head.previous_direction != :up
+      head.direction = :down
+    end
+  end
+end
+
+def move_snake args
+  snake = [args.state.head, *args.state.body]
+  snake.each_with_index do |segment, index|
+    segment.previous_direction = segment.direction unless index == 0
+    segment.direction = snake[index - 1].previous_direction unless index == 0
+    vector = { x: 0, y: 0 }
+    case segment.direction
+    when :right
+      vector.x = 1
+    when :left
+      vector.x = -1
+    when :down
+      vector.y = -1
+    when :up
+      vector.y = 1
+    end
+    segment.x += GRID_SIZE * vector.x
+    segment.y += GRID_SIZE * vector.y
+  end
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    head.x = head.x
+      .clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    head.y = head.y
+      .clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+  end
+end
+
+def handle_body_collision args
+  if args.state.body.any_intersect_rect? args.state.head
+    p "COLLIDED WITH BODY"
+  end
+end
+
+def grow_body args
+  segment = args.state.body.last.clone ||
+    args.state.head.clone
+  vector = { x: 0, y: 0 }
+  if segment.direction == :right
+    vector.x = -1
+  elsif segment.direction == :left
+    vector.x = 1
+  elsif segment.direction == :down
+    vector.y = 1
+  elsif segment.direction == :up
+    vector.y = -1
+  end
+
+  segment.x += (GRID_SIZE * vector.x)
+  segment.y += (GRID_SIZE * vector.y)
+  args.state.body &lt;&lt; segment
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+    grow_body args
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    handle_body_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; [args.state.head, *args.state.body]
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+  render_score args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+  args.state.body ||= []
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd16c338">
+<h2 id="orgd16c338"><span class="section-number-2">14.</span> Adding Game Over</h2>
+<div class="outline-text-2" id="text-14">
+</div>
+</section>
+<section id="slide-org48336e0">
+<h3 id="org48336e0"><span class="section-number-3">14.1.</span> Adding Game State</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="206">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+  if args.tick_count.mod_zero? SPEED
+    head.previous_direction = head.direction
+    if inputs.left &amp;&amp; head.previous_direction != :right
+      head.direction = :left
+    elsif inputs.right &amp;&amp; head.previous_direction != :left
+      head.direction = :right
+    elsif inputs.up &amp;&amp; head.previous_direction != :down
+      head.direction = :up
+    elsif inputs.down &amp;&amp; head.previous_direction != :up
+      head.direction = :down
+    end
+  end
+end
+
+def move_snake args
+  snake = [args.state.head, *args.state.body]
+  snake.each_with_index do |segment, index|
+    segment.previous_direction = segment.direction unless index == 0
+    segment.direction = snake[index - 1].previous_direction unless index == 0
+    vector = { x: 0, y: 0 }
+    case segment.direction
+    when :right
+      vector.x = 1
+    when :left
+      vector.x = -1
+    when :down
+      vector.y = -1
+    when :up
+      vector.y = 1
+    end
+    segment.x += GRID_SIZE * vector.x
+    segment.y += GRID_SIZE * vector.y
+  end
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    # head.x = head.x.clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    # head.y = head.y.clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+    args.state.game_state = :game_over
+  end
+end
+
+def handle_body_collision args
+  if args.state.body.any_intersect_rect? args.state.head
+    # p "COLLIDED WITH BODY"
+    args.state.game_state = :game_over
+  end
+end
+
+def grow_body args
+  segment = args.state.body.last.clone ||
+    args.state.head.clone
+  vector = { x: 0, y: 0 }
+  if segment.direction == :right
+    vector.x = -1
+  elsif segment.direction == :left
+    vector.x = 1
+  elsif segment.direction == :down
+    vector.y = 1
+  elsif segment.direction == :up
+    vector.y = -1
+  end
+
+  segment.x += (GRID_SIZE * vector.x)
+  segment.y += (GRID_SIZE * vector.y)
+  args.state.body &lt;&lt; segment
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+    grow_body args
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    handle_body_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; [args.state.head, *args.state.body]
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+  render_score args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+  args.state.body ||= []
+  args.state.game_state ||= :in_play
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org9433214">
+<h3 id="org9433214"><span class="section-number-3">14.2.</span> Setting Game Over Conditions</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="53-57|109">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  head = args.state.head
+  if args.tick_count.mod_zero? SPEED
+    head.previous_direction = head.direction
+    if inputs.left &amp;&amp; head.previous_direction != :right
+      head.direction = :left
+    elsif inputs.right &amp;&amp; head.previous_direction != :left
+      head.direction = :right
+    elsif inputs.up &amp;&amp; head.previous_direction != :down
+      head.direction = :up
+    elsif inputs.down &amp;&amp; head.previous_direction != :up
+      head.direction = :down
+    end
+  end
+end
+
+def move_snake args
+  snake = [args.state.head, *args.state.body]
+  snake.each_with_index do |segment, index|
+    segment.previous_direction = segment.direction unless index == 0
+    segment.direction = snake[index - 1].previous_direction unless index == 0
+    vector = { x: 0, y: 0 }
+    case segment.direction
+    when :right
+      vector.x = 1
+    when :left
+      vector.x = -1
+    when :down
+      vector.y = -1
+    when :up
+      vector.y = 1
+    end
+    segment.x += GRID_SIZE * vector.x
+    segment.y += GRID_SIZE * vector.y
+  end
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    # head.x = head.x.clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    # head.y = head.y.clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+    args.state.game_state = :game_over
+  end
+end
+
+def handle_body_collision args
+  if args.state.body.any_intersect_rect? args.state.head
+    # p "COLLIDED WITH BODY"
+    args.state.game_state = :game_over
+  end
+end
+
+def grow_body args
+  segment = args.state.body.last.clone ||
+    args.state.head.clone
+  vector = { x: 0, y: 0 }
+  if segment.direction == :right
+    vector.x = -1
+  elsif segment.direction == :left
+    vector.x = 1
+  elsif segment.direction == :down
+    vector.y = 1
+  elsif segment.direction == :up
+    vector.y = -1
+  end
+
+  segment.x += (GRID_SIZE * vector.x)
+  segment.y += (GRID_SIZE * vector.y)
+  args.state.body &lt;&lt; segment
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+    grow_body args
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    handle_body_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; [args.state.head, *args.state.body]
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render args
+  render_grid args
+  render_snake args
+  render_walls args
+  render_collectable args
+  render_score args
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+  args.state.body ||= []
+  args.state.game_state ||= :in_play
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-org3c05352">
+<h3 id="org3c05352"><span class="section-number-3">14.3.</span> Creating the Game over screen</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="162|163-169|170-176|177-183|187-189,195">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  if args.state.game_state == :game_over
+    if inputs.keyboard.key_down.escape
+      $gtk.reset_next_tick
+    end
+  else
+    head = args.state.head
+    if args.tick_count.mod_zero? SPEED
+      head.previous_direction = head.direction
+      if inputs.left &amp;&amp; head.previous_direction != :right
+        head.direction = :left
+      elsif inputs.right &amp;&amp; head.previous_direction != :left
+        head.direction = :right
+      elsif inputs.up &amp;&amp; head.previous_direction != :down
+        head.direction = :up
+      elsif inputs.down &amp;&amp; head.previous_direction != :up
+        head.direction = :down
+      end
+    end
+  end
+end
+
+def move_snake args
+  snake = [args.state.head, *args.state.body]
+  snake.each_with_index do |segment, index|
+    segment.previous_direction = segment.direction unless index == 0
+    segment.direction = snake[index - 1].previous_direction unless index == 0
+    vector = { x: 0, y: 0 }
+    case segment.direction
+    when :right
+      vector.x = 1
+    when :left
+      vector.x = -1
+    when :down
+      vector.y = -1
+    when :up
+      vector.y = 1
+    end
+    segment.x += GRID_SIZE * vector.x
+    segment.y += GRID_SIZE * vector.y
+  end
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    # head.x = head.x.clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    # head.y = head.y.clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+    args.state.game_state = :game_over
+  end
+end
+
+def handle_body_collision args
+  if args.state.body.any_intersect_rect? args.state.head
+    # p "COLLIDED WITH BODY"
+    args.state.game_state = :game_over
+  end
+end
+
+def grow_body args
+  segment = args.state.body.last.clone ||
+    args.state.head.clone
+  vector = { x: 0, y: 0 }
+  if segment.direction == :right
+    vector.x = -1
+  elsif segment.direction == :left
+    vector.x = 1
+  elsif segment.direction == :down
+    vector.y = 1
+  elsif segment.direction == :up
+    vector.y = -1
+  end
+
+  segment.x += (GRID_SIZE * vector.x)
+  segment.y += (GRID_SIZE * vector.y)
+  args.state.body &lt;&lt; segment
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+    grow_body args
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  return if args.state.game_state == :game_over
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    handle_body_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; [args.state.head, *args.state.body]
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render_game_over args
+  args.outputs.labels &lt;&lt; {
+    x: args.grid.w / 2,
+    y: (args.grid.h / 2).shift_up(16),
+    text: "GAME OVER!",
+    size_enum: 10,
+    alignment_enum: 1
+  }
+  args.outputs.labels &lt;&lt; {
+    x: args.grid.w / 2,
+    y: (args.grid.h / 2).shift_down(24),
+    text: "Final Score was #{args.state.score} points!",
+    size_enum: 1,
+    alignment_enum: 1
+  }
+  args.outputs.labels &lt;&lt; {
+    x: args.grid.w / 2,
+    y: (args.grid.h / 2).shift_down(48),
+    text: "Press Escape to try again",
+    size_enum: 0,
+    alignment_enum: 1
+  }
+end
+
+def render args
+  if args.state.game_state == :game_over
+    render_game_over args
+  else
+    render_grid args
+    render_snake args
+    render_walls args
+    render_collectable args
+    render_score args
+  end
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+  args.state.body ||= []
+  args.state.game_state ||= :in_play
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+<section id="slide-orgbce0628">
+<h3 id="orgbce0628"><span class="section-number-3">14.4.</span> Reset Game</h3>
+<div class="org-src-container">
+
+<pre   ><code class="ruby" data-line-numbers="6-10,24">GRID_SIZE = 20
+SPEED = 10
+
+def handle_input args
+  inputs = args.inputs
+  if args.state.game_state == :game_over
+    if inputs.keyboard.key_down.escape
+      $gtk.reset_next_tick
+    end
+  else
+    head = args.state.head
+    if args.tick_count.mod_zero? SPEED
+      head.previous_direction = head.direction
+      if inputs.left &amp;&amp; head.previous_direction != :right
+        head.direction = :left
+      elsif inputs.right &amp;&amp; head.previous_direction != :left
+        head.direction = :right
+      elsif inputs.up &amp;&amp; head.previous_direction != :down
+        head.direction = :up
+      elsif inputs.down &amp;&amp; head.previous_direction != :up
+        head.direction = :down
+      end
+    end
+  end
+end
+
+def move_snake args
+  snake = [args.state.head, *args.state.body]
+  snake.each_with_index do |segment, index|
+    segment.previous_direction = segment.direction unless index == 0
+    segment.direction = snake[index - 1].previous_direction unless index == 0
+    vector = { x: 0, y: 0 }
+    case segment.direction
+    when :right
+      vector.x = 1
+    when :left
+      vector.x = -1
+    when :down
+      vector.y = -1
+    when :up
+      vector.y = 1
+    end
+    segment.x += GRID_SIZE * vector.x
+    segment.y += GRID_SIZE * vector.y
+  end
+end
+
+def handle_boundary_collision args
+  walls = args.state.walls
+  head = args.state.head
+  if [walls.left, walls.right, walls.top, walls.bottom].any_intersect_rect?  args.state.head
+    # head.x = head.x.clamp(walls.left.right, walls.right.left - GRID_SIZE)
+    # head.y = head.y.clamp(walls.bottom.top, walls.top.bottom - GRID_SIZE)
+    args.state.game_state = :game_over
+  end
+end
+
+def handle_body_collision args
+  if args.state.body.any_intersect_rect? args.state.head
+    # p "COLLIDED WITH BODY"
+    args.state.game_state = :game_over
+  end
+end
+
+def grow_body args
+  segment = args.state.body.last.clone ||
+    args.state.head.clone
+  vector = { x: 0, y: 0 }
+  if segment.direction == :right
+    vector.x = -1
+  elsif segment.direction == :left
+    vector.x = 1
+  elsif segment.direction == :down
+    vector.y = 1
+  elsif segment.direction == :up
+    vector.y = -1
+  end
+
+  segment.x += (GRID_SIZE * vector.x)
+  segment.y += (GRID_SIZE * vector.y)
+  args.state.body &lt;&lt; segment
+end
+
+def handle_collectable_collision args
+  return if args.state.collectable.nil?
+  if args.state.collectable.intersect_rect? args.state.head
+    args.state.collectable = nil
+    args.state.score += 1
+    args.outputs.sounds &lt;&lt; "sounds/collect.wav"
+    grow_body args
+  end
+end
+
+def spawn_collectable args
+  if args.state.collectable.nil?
+    x_rand = ((args.grid.w / GRID_SIZE) - 1).randomize(:ratio).ceil
+    y_rand = ((args.grid.h / GRID_SIZE) - 1).randomize(:ratio).ceil
+    args.state.collectable = {
+      x: x_rand * GRID_SIZE,
+      y: y_rand * GRID_SIZE,
+      h: GRID_SIZE,
+      w: GRID_SIZE,
+      r: 233,
+      g: 23,
+      b: 23
+    }
+  end
+end
+
+def update args
+  return if args.state.game_state == :game_over
+  if args.tick_count.mod_zero? SPEED
+    move_snake args
+    handle_boundary_collision args
+    handle_collectable_collision args
+    handle_body_collision args
+    spawn_collectable args
+  end
+end
+
+def render_grid args
+  x_axis = args.grid.w / GRID_SIZE
+  y_axis = args.grid.h / GRID_SIZE
+  x_axis.each_with_index do |x|
+    args.outputs.lines &lt;&lt;
+        {
+          x: x * GRID_SIZE,
+          y: 0,
+          x2: x * GRID_SIZE,
+          y2: args.grid.h
+        }
+  end
+
+  y_axis.each_with_index do |y|
+    args.outputs.lines &lt;&lt;
+      {
+        x: 0,
+        y: y * GRID_SIZE,
+        x2: args.grid.w,
+        y2: y * GRID_SIZE
+      }
+  end
+end
+
+def render_snake args
+  args.outputs.solids &lt;&lt; [args.state.head, *args.state.body]
+end
+
+def render_walls args
+  walls = args.state.walls
+  args.outputs.solids &lt;&lt; [walls.left, walls.right, walls.top, walls.bottom]
+end
+
+def render_collectable args
+  args.outputs.solids &lt;&lt; args.state.collectable
+end
+
+def render_score args
+  args.outputs.labels &lt;&lt; { x: args.grid.left.shift_right(2 * GRID_SIZE), y: args.grid.top.shift_down(2 * GRID_SIZE), text: "Score: #{args.state.score}"}
+end
+
+def render_game_over args
+  args.outputs.labels &lt;&lt; {
+    x: args.grid.w / 2,
+    y: (args.grid.h / 2).shift_up(16),
+    text: "GAME OVER!",
+    size_enum: 10,
+    alignment_enum: 1
+  }
+  args.outputs.labels &lt;&lt; {
+    x: args.grid.w / 2,
+    y: (args.grid.h / 2).shift_down(24),
+    text: "Final Score was #{args.state.score} points!",
+    size_enum: 1,
+    alignment_enum: 1
+  }
+  args.outputs.labels &lt;&lt; {
+    x: args.grid.w / 2,
+    y: (args.grid.h / 2).shift_down(48),
+    text: "Press Escape to try again",
+    size_enum: 0,
+    alignment_enum: 1
+  }
+end
+
+def render args
+  if args.state.game_state == :game_over
+    render_game_over args
+  else
+    render_grid args
+    render_snake args
+    render_walls args
+    render_collectable args
+    render_score args
+  end
+end
+
+def defaults args
+  args.state.head ||=
+  {
+    x: args.grid.w / 2,
+    y: args.grid.h / 2,
+    w: GRID_SIZE,
+    h: GRID_SIZE,
+    r: 23,
+    g: 245,
+    b: 23,
+  }
+
+  args.state.walls.left ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.right ||= {
+    x: args.grid.right - GRID_SIZE,
+    y: args.grid.bottom,
+    h: args.grid.h,
+    w: GRID_SIZE,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.top ||= {
+    x: args.grid.left,
+    y: args.grid.top - GRID_SIZE,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+  args.state.walls.bottom ||= {
+    x: args.grid.left,
+    y: args.grid.bottom,
+    h: GRID_SIZE,
+    w: args.grid.w,
+    r: 12, g: 33, b: 245
+  }
+
+  args.state.score ||= 0
+  args.state.body ||= []
+  args.state.game_state ||= :in_play
+end
+
+def tick args
+  defaults args
+  handle_input args
+  update args
+  render args
+end
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org7b60c07">
+<h2 id="org7b60c07"><span class="section-number-2">15.</span> Publish!</h2>
+<div class="org-src-container">
+
+<pre   ><code class="bash" ># Mac OS and Linux
+./dragonruby-publish
+# Windows
+dragonruby-publish
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org1da7502">
+<h2 id="org1da7502"><span class="section-number-2">16.</span> Now What?</h2>
+<div class="outline-text-2" id="text-16">
+</div>
+</section>
+<section id="slide-org7ad6989">
+<h3 id="org7ad6989"><span class="section-number-3">16.1.</span> Community</h3>
+<p>
+<a href="http://discord.dragonruby.org/">DragonRuby Discord</a>
+</p>
+</section>
+<section id="slide-orgf22dd1a">
+<h3 id="orgf22dd1a"><span class="section-number-3">16.2.</span> Resources</h3>
+<ul>
+<li>Documentation</li>
+<li>Samples</li>
+
+</ul>
+</section>
+<section id="slide-org142d4c8">
+<h3 id="org142d4c8"><span class="section-number-3">16.3.</span> Explore!</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealHighlight, RevealNotes]
+});
+
+</script>
+</body>
+</html>
