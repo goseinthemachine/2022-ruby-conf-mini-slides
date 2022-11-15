@@ -52,7 +52,7 @@ Need a Linux,Mac,PC or a Raspberry Pi
 # For Mac or Linux
 ./dragonruby
 # For Windows
-dragonruby
+.\dragonruby.exe
 #+end_src
 * Let's Publish
 #+BEGIN_NOTES
@@ -95,7 +95,7 @@ This will build all the executables and put them in a build folder in the root o
 # Mac and Linux
 ./dragonruby-publish --only-package mygame
 # Windows
-dragonruby-publish --only-package mygame
+.\dragonruby-publish.exe --only-package mygame
 #+end_src
 * The Basics
 #+BEGIN_NOTES
@@ -2031,7 +2031,7 @@ def handle_boundary_collision args
 end
 
 def grow_body args
-  segment = args.state.body.any? args.state.body.last.clone :
+  segment = args.state.body.any? ? args.state.body.last.clone :
     args.state.head.clone
   vector = { x: 0, y: 0 }
   if segment.direction == :right
@@ -2235,7 +2235,7 @@ def handle_boundary_collision args
 end
 
 def grow_body args
-  segment = args.state.body.last.clone ||
+  segment = args.state.body.any? args.state.body.last.clone :
     args.state.head.clone
   vector = { x: 0, y: 0 }
   if segment.direction == :right
@@ -2440,7 +2440,7 @@ def handle_boundary_collision args
 end
 
 def grow_body args
-  segment = args.state.body.last.clone ||
+  segment = args.state.body.any? ? args.state.body.last.clone :
     args.state.head.clone
   vector = { x: 0, y: 0 }
   if segment.direction == :right
@@ -4183,7 +4183,7 @@ end
 # Mac OS and Linux
 ./dragonruby-publish
 # Windows
-dragonruby-publish
+.\dragonruby-publish.exe
 #+end_src
 * Now What?
 ** Community
