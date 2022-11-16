@@ -4,6 +4,8 @@
 #+REVEAL_PLUGINS: (highlight notes)
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
 #+REVEAL_HIGHLIGHT_CSS: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/windows-high-contrast.min.css
+#+REVEAL_TITLE_SLIDE_BACKGROUND: ./ruby-conf-background.png
+#+REVEAL_DEFAULT_SLIDE_BACKGROUND: ./ruby-conf-background.png
 
 #+REVEAL_REVEAL_JS_VERSION: 4
 
@@ -44,9 +46,7 @@ Need a Linux,Mac,PC or a Raspberry Pi
 [[https://dragonruby.org/toolkit/game][DragonRuby.org]]
 #+END_NOTES
 * Initial Setup
-
-- clone repo https://github.com/goseinthemachine/2022-ruby-conf-workshop
-- go into the folder
+- Open the downloaded folder
 - In the terminal run the following
 #+begin_src bash
 # For Mac or Linux
